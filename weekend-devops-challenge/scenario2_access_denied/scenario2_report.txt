@@ -1,0 +1,16 @@
+BABATOLA DAMILARE
+
+1. What Was Broken 
+(a)The secure_data directory had no permission (chmod 000)
+(b)The app_key.pem file had no permission (chmod 000)
+(c)The script file was not able to run/execute (chmod 644)
+
+2. How I Found The Issue
+(a)I did an ls -l to check the permission my secure_data directory has and i saw that it had no permission.
+(b)I also did an ls -l to check the permission my app_key.pem file has and it also had no permission.  
+(c)I was able to cat backup.sh to read my script file but when i tried ./backup.sh and ./scripts/backup.sh it gave a permission denied, meaning the script cannot run/execute. so i ran ls -l to see the permission and i saw that it had no permission to run/execute.
+
+3. How I Fix It
+(a)I gave a chmod 755 secure_data to give access my to the directory.
+(b)I gave a chmod +r app_key.pem to make my key file readable.
+(c)I gave a chmod +x backup.sh to make my script file executable.
