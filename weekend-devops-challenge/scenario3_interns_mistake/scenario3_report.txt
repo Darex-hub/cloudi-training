@@ -1,0 +1,16 @@
+BABATOLA DAMILARE
+
+1. What Was Broken
+(a)Website index  file was broken, Had no permission. (chmod 000)
+(b)Deployment script could not run/execute, it was ony readable. (chmod 444) 
+(c)log directory was broken making the deployment log unaccessible. (chmod 400)
+
+How I Found The Issue
+(a)I wanted to read the index file using: cat index.html and i got a permission denied, i figure out that the index file had no permission (chmod 000) when i checked using ls -l
+(b)The script file could be read but it couldn't excute (chmod 444)
+(c)The log directory was not accessible when tried to cd into, it gave a permission denied. using ls -l i saw that the permission for the log directory made it readable only.
+  
+3. How I Fix It
+(a)I gave a chmod 644 index.html to make my index file so it can be readable (company portal)
+(b)I gave a chmod +x deploy.sh to make my deployment script file executable
+(c)I gave a chmod 755 logs so that my log directory can allow a cd and i can ls to see my deployment logs and cat to read it.  
