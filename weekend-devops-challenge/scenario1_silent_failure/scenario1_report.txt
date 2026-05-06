@@ -1,0 +1,13 @@
+BABATOLA DAMILARE
+
+1. What Was Broken
+(a)The config.yml file had no permission (chmod 000)
+(b)The scripts/restart_service.sh file could not run/execute (chmod 644)
+
+2. How I Foun
+(a)I cat config.yml so i can read the file but i got a permission denied response, so i did ls -la to check its permission and i saw that it had no permission. 
+(b)I was able to cat restart_service.sh to read my scripts file but when i tried to run ./restart_service.sh, i got a permission denied, which signifies that the file cannot run/execute so i ran ls -l to see the permission and i saw that it had no permission to run/execute.
+
+3. How I Fix It
+(a)I gave a chmod +r config.yml to make my config.yml file readable.
+(b)I gave a chmod +x restart_service.sh to make my script file executable. 
